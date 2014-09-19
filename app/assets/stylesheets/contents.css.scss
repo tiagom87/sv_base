@@ -1,5 +1,8 @@
 /**
  * CONTENTS
+ * 
+ * VARIABLES
+ * .....................SCSS Useful Variables
  *
  * SETTINGS
  * Global...............Globally-available variables and config.
@@ -32,8 +35,31 @@
     #VARIABLES
 \*------------------------------------*/
 
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$font-primary: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+$font-secondary: "Libre Baskerville", "Times New Roman", Times, serif;
+$font-third: Montserrat, arial, sans-serif;
+
+$color-black: #333;
+$color-white: #FFF;
+
+$color-gray--darker: #222;
+$color-gray-dark: #555;
+$color-gray: #999;
+$color-gray--lighter: #f8f8f8;
+
+
+$color-primary: #f9005c;
+$color-primary--light: #FE93BA;
+$color-primary--dark: #930036;
+
+$color-secondary: #27c5c3;
+$color-secondary--light: #99EBE9;
+$color-secondary--dark: #0D4544;
+
+$color-success: #58bf44;
+
+
+
 
 
 /*------------------------------------*\
@@ -151,14 +177,17 @@ pre {
 /* Links improvement */
 a {
 	text-decoration: none;
-	color: #08C;
+	color: $color-primary;
 	transition: all 0.3s ease-out;
 	position: relative;
 	padding: .5em;
 	margin: -.5em;
 }
 
-a:hover { color: #0AF; }
+a:hover { 
+	color: $color-primary--light;
+	text-decoration: none; 
+}
 
 
 /* CSS Transparency */
@@ -195,11 +224,11 @@ content: "\279C";
 
 /* Mouse Highlight Text Selection */
 ::selection {
-color: #000000;
+color: white;
 background-color: #FF0000;
 }
 ::-moz-selection {
-color: #000000;
+color: white;
 background: #FF0000;
 }
 
@@ -266,46 +295,52 @@ blockquote p {
 	font: italic bold #ff0000 ;
 }
 
+/* HR Color */
+
+hr {
+background-color: #eaeaea;
+}
+
 
 
 /*------------------------------------*\
-    #BASE
+    #HEADING
 \*------------------------------------*/
 
 h1 {
-    font-size: 3.8em;
-    line-height: 1.2em;
-    font-weight: 700;
+    font-size: 3.2em;
 }
  
 h2 {
-    font-size: 3em;
-    line-height: 1.3em;
-    font-weight: 700;
+    font-size: 2.8em;
 }
  
 h3 {
     font-size: 2.4em;
-    line-height: 1.3em;
-    font-weight: 700;
 }
  
 h4 {
     font-size: 1.8em;
-    line-height: 1.3em;
-    font-weight: 700;
 }
  
 h5 {
     font-size: 1.4em;
-    line-height: 1.4em;
-    font-weight: 700;
 }
  
 h6 {
     font-size: 1.2em;
-    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 3px 0;
     font-weight: 700;
+    line-height: 1.4em;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-weight: 500;
+    color: $color-gray;
+    font-size: 0.6em;
 }
 
 
@@ -314,6 +349,12 @@ h6 {
     #OBJECTS
 \*------------------------------------*/
 
+.line-section {
+    width: 55px;
+    height: 1px;
+    margin: 30px auto;
+    background: $color-primary;
+}
 
 
 
@@ -345,23 +386,27 @@ background:#999;
 
 /* Import Fonts */
 
-@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Raleway:900,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Montserrat:400,700|Raleway:900,500,300,700,800);
 
 /* Default Font Size to use rEM */
 
+html {
+	font-size: 100%; /* font-size 1em = 10px */
+}
+
 body {
-    font-family: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+    font-family: $font-primary;
     font-size: 62.5%; /* font-size 1em = 10px */
     font-weight: 500;
 }
 
 /* Fonts */
 .font-primary {
-    font-family: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+    font-family: $font-primary;
 }
 
 .font-secondary {
-	font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+	font-family: $font-secondary;
 }
 
 .font-code {
@@ -378,10 +423,188 @@ body {
 	font-weight: 500;
 }
 
-.font-bold {
+.font-bold, strong {
 	font-weight: 700;
 }
 
 .font-black {
 	font-weight: 900;
 }
+
+/* Default p Size */
+
+p {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #5f5f5f;
+    line-height: 1.85;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.serif {
+font-family: $font-secondary;
+font-style: italic;
+font-weight: normal;
+}
+
+.title-section {
+    margin-bottom: 15px;
+    font-size: 3.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 1.3em;
+}
+
+.heading-section {
+    margin: 0;
+    padding: 0;
+    font-family: $font-secondary;
+    font-size: 1.6em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.3em;
+    color: $color-gray-dark;
+}
+
+.title-small {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.4em;
+} 
+
+.text-point {
+    margin-right: -5px;
+    color: $color-primary;
+    font-family: $font-third;
+    font-weight: 400;
+}
+
+
+
+
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+
+.color-primary {
+	color: $color-primary;
+}
+
+.color-secondary {
+	color: $color-secondary;
+}
+
+.color-success {
+	color: $color-success;
+}
+
+.white {
+	color: $color-white;
+}
+
+.black {
+	color: $color-black;
+}
+
+.gray {
+	color: $color-gray;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #MARGINS & PADDINGS
+\*------------------------------------*/
+
+/* Margin Bottom */
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+/* Margin Bottom */
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+
+
+
+/*------------------------------------*\
+    #SECTIONS
+\*------------------------------------*/
+
+.page-section {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 140px 0;
+}
+
+.small-section {
+    padding: 70px 0;
+}
+
+
+
+
+/*------------------------------------*\
+    #BACKGROUNDS
+\*------------------------------------*/
+
+.bg-gray--light {
+    background-color: $color-gray--lighter; 
+}
+
+.bg-dark {
+	background-color: $color-gray--darker;
+}
+
+
+
+
+/*------------------------------------*\
+    #SMOOTH SCROLL
+\*------------------------------------*/
+
