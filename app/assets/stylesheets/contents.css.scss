@@ -32,37 +32,6 @@
 
 
 /*------------------------------------*\
-    #VARIABLES
-\*------------------------------------*/
-
-$font-primary: "Raleway", "Helvetica Neue", "Arial", sans-serif;
-$font-secondary: "Libre Baskerville", "Times New Roman", Times, serif;
-$font-third: Montserrat, arial, sans-serif;
-
-$color-black: #333;
-$color-white: #FFF;
-
-$color-gray--darker: #222;
-$color-gray--dark: #555;
-$color-gray: #999;
-$color-gray--lighter: #f8f8f8;
-
-
-$color-primary: #f9005c;
-$color-primary--light: #FE93BA;
-$color-primary--dark: #930036;
-
-$color-secondary: #27c5c3;
-$color-secondary--light: #99EBE9;
-$color-secondary--dark: #0D4544;
-
-$color-success: #58bf44;
-
-
-
-
-
-/*------------------------------------*\
     #SETTINGS
 \*------------------------------------*/
 
@@ -184,7 +153,7 @@ pre {
 /* Links improvement */
 a {
 	text-decoration: none;
-	color: $color-primary;
+	color: $brand-primary;
 	transition: all 0.3s ease-out;
 	position: relative;
 	padding: .5em;
@@ -192,7 +161,7 @@ a {
 }
 
 a:hover { 
-	color: $color-primary--light;
+	color: $brand-primary--light;
 	text-decoration: none; 
 }
 
@@ -219,11 +188,11 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 /* Mouse Highlight Text Selection */
 ::selection {
 color: white;
-background-color: #FF0000;
+background-color: $gray-darker;
 }
 ::-moz-selection {
 color: white;
-background: #FF0000;
+background: $gray-darker;
 }
 
 /* Vertical Center */
@@ -271,14 +240,14 @@ font-family: $font-secondary;
 font-size: 1.3em;
 font-style: normal;
 line-height: 1.7;
-color: $color-gray;
+color: $gray;
 }
 
 blockquote p {
 margin-bottom: 1em;
 font-size: 1.3em;
 font-style: normal;
-color: $color-gray--darker;
+color: $gray-darker;
 line-height: 1.7;
 }
 
@@ -286,7 +255,7 @@ blockquote footer {
 margin-top: -10px;
 font-size: 1em;
 font-family: $font-primary;
-color: $color-gray;
+color: $gray;
 }
 
 /* Pull Quote Class */
@@ -343,7 +312,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     font-weight: 500;
-    color: $color-gray;
+    color: $gray;
     font-size: 0.6em;
 }
 
@@ -357,7 +326,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     width: 55px;
     height: 1px;
     margin: 30px auto;
-    background: $color-primary;
+    background: $brand-primary;
 }
 
 
@@ -365,6 +334,153 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 /*------------------------------------*\
     #COMPONENTS
 \*------------------------------------*/
+
+/* Buttons */
+
+.btn, a.btn {
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    padding: 12px 27px 11px;
+    -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -ms-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.btn-lg {
+    padding: 15px 40px 14px;
+    font-size: 1.3em;
+}
+
+.btn-sm {
+    padding: 8px 20px 7px;
+    font-size: 1.2em;
+}
+
+.btn-xs {
+padding: 6px 15px 5px;
+font-size: 1.1em;
+letter-spacing: 1px;
+}
+
+.btn-border {
+    background-color: inherit;
+    border: 2px solid;
+    font-weight: 700;
+}
+
+.btn-border.btn-primary {
+    color: $brand-primary;
+}
+
+.btn-border.btn-primary:hover, .btn-border.btn-primary:focus, .btn-border.btn-primary:active, .btn-border.btn-primary.active  {
+    color: $white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+}
+
+.btn-border.btn-info {
+    color: $brand-info;
+}
+
+.btn-border.btn-info:hover, .btn-border.btn-info:focus, .btn-border.btn-info:active, .btn-border.btn-info.active  {
+    color: $white;
+    background-color: $brand-info;
+    border-color: $brand-info;
+}
+
+.btn-border.btn-danger {
+    color: $brand-danger;
+}
+
+.btn-border.btn-danger:hover, .btn-border.btn-danger:focus, .btn-border.btn-danger:active, .btn-border.btn-danger.active  {
+    color: $white;
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+}
+
+.btn-border.btn-warning {
+    color: $brand-warning;
+}
+
+.btn-border.btn-warning:hover, .btn-border.btn-warning:focus, .btn-border.btn-warning:active, .btn-border.btn-warning.active  {
+    color: $white;
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+}
+
+.btn-border.btn-success {
+    color: $brand-success;
+}
+
+.btn-border.btn-success:hover, .btn-border.btn-success:focus, .btn-border.btn-success:active, .btn-border.btn-success.active  {
+    color: $white;
+    background-color: $brand-success;
+    border-color: $brand-success;
+}
+
+.btn-circle {
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+}
+
+.btn-black {
+color: $white;
+background-color: $black;
+border-color: $black;
+}
+
+.btn-border.btn-black {
+    color: $black;
+    background-color: transparent;
+}
+
+.btn-border.btn-black:hover, .btn-border.btn-black:focus, .btn-border.btn-black:active, .btn-border.btn-black.active  {
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+}
+
+.btn.btn-black:hover,.btn.btn-black:focus, .btn.btn-black:active, .btn.btn-black.active {
+    color: white;
+}
+
+.btn-white {
+color: $black;
+background-color: $white;
+border-color: $white;
+}
+
+.btn-border.btn-white {
+    color: $white;
+    background-color: transparent;
+}
+
+.btn-border.btn-white:hover, .btn-border.btn-white:focus, .btn-border.btn-white:active, .btn-border.btn-white.active  {
+    color: $black;
+    background-color: $white;
+    border-color: $white;
+}
+
+.btn.btn-white:hover,.btn.btn-white:focus, .btn.btn-white:active, .btn.btn-white.active {
+    color: black;
+}
+
+.btn-border.btn-default {
+    color: #eee;
+    background-color: transparent;
+}
+
+.btn-border.btn-default:hover, .btn-border.btn-default:focus, .btn-border.btn-default:active, .btn-border.btn-default.active  {
+    color: #888;
+    background-color: #eee;
+    border-color: #eee;
+}
+
 
 /* Fixed Footer */
 
@@ -440,7 +556,7 @@ body {
 p {
     font-size: 1.6em;
     font-weight: 300;
-    color: $color-gray--dark;
+    color: $gray-dark;
     line-height: 1.85;
     margin: 0 0 1.5em 0;
 }
@@ -448,7 +564,7 @@ p {
 .text {
     font-size: 1.6em;
     font-weight: 300;
-    color: $color-gray--dark;
+    color: $gray-dark;
     line-height: 1.85;
     margin: 0 0 1.5em 0;
 }
@@ -483,7 +599,7 @@ font-weight: normal;
     font-weight: normal;
     text-align: center;
     line-height: 1.3em;
-    color: $color-gray--dark;
+    color: $gray-dark;
 }
 
 .title-small {
@@ -492,11 +608,12 @@ font-weight: normal;
     text-align: center;
     text-transform: uppercase;
     font-size: 2.4em;
+    color: $gray-darker;
 } 
 
 .text-point {
     margin-right: -5px;
-    color: $color-primary;
+    color: $brand-primary;
     font-family: $font-third;
     font-weight: 400;
 }
@@ -509,27 +626,27 @@ font-weight: normal;
 \*------------------------------------*/
 
 .color-primary {
-	color: $color-primary;
+	color: $brand-primary;
 }
 
-.color-secondary {
-	color: $color-secondary;
+.color-info {
+	color: $brand-info;
 }
 
 .color-success {
-	color: $color-success;
+	color: $brand-success;
 }
 
 .white {
-	color: $color-white;
+	color: $white;
 }
 
 .black {
-	color: $color-black;
+	color: $black;
 }
 
 .gray {
-	color: $color-gray;
+	color: $gray;
 }
 
 
@@ -539,6 +656,7 @@ font-weight: normal;
 /*------------------------------------*\
     #MARGINS & PADDINGS
 \*------------------------------------*/
+
 
 /* Margin Bottom */
 .mb-60 {
@@ -557,6 +675,10 @@ font-weight: normal;
     margin-bottom: 15px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+
 /* Margin Bottom */
 .mt-60 {
     margin-top: 60px;
@@ -568,6 +690,10 @@ font-weight: normal;
 
 .mt-15 {
     margin-top: 15px;
+}
+
+.mt-10 {
+    margin-top: 10px;
 }
 
 
@@ -607,11 +733,15 @@ font-weight: normal;
 \*------------------------------------*/
 
 .bg-gray--light {
-    background-color: $color-gray--lighter; 
+    background-color: $gray-lighter; 
 }
 
 .bg-dark {
-	background-color: $color-gray--darker;
+	background-color: $gray-darker;
+}
+
+.bg-dark--lighter {
+    background-color: #252525;
 }
 
 
