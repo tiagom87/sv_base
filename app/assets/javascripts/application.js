@@ -12,6 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require smoothPageScroll
+//= require TweenMax.min
+//= require ScrollToPlugin.min
+//= require smooth-scroll
+//= require bind-polyfill.js
+//= require jquery.sticky
+//= require jquery.fitvids
 //= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require scripts
 //= require_tree .

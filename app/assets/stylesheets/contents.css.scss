@@ -1,0 +1,753 @@
+/**
+ * CONTENTS
+ * 
+ * VARIABLES
+ * .....................SCSS Useful Variables
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
+
+
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+
+
+
+
+/*------------------------------------*\
+    #TOOLS
+\*------------------------------------*/
+
+/* Preload Images */
+body:after {
+	/*background: image-url(image-01.png) no-repeat -9999px -9999px,*/
+	display: none;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #GENERIC
+\*------------------------------------*/
+
+/* Smooth Fonts */
+
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+/* Proper box-model */
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* Clearfix hack */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* Cleafix hack: IE6/7 support */
+.clearfix {
+	*zoom: 1;
+}
+
+
+/* Image replacement */
+.ir {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/* Break string */
+.break {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+/* Truncate Ellipse string */
+.truncate {
+	width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis; /* Required for IE8 */
+	-o-text-overflow: ellipsis; /* Required for Opera */
+	text-overflow: ellipsis;
+}
+
+
+/* Make wrap in pre tags */
+pre {
+	white-space: pre-wrap;       /* Chrome & Safari */
+	white-space: -moz-pre-wrap;  /* Mozilla since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+
+/* Hide / Show classes */
+.hide { display: none; }
+.show { display: block; }
+
+/* Disabled effect class */
+.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* Hide: keep in to bots and screen-readers */
+.visuallyhidden {
+	position: absolute;
+	width: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+	height: 1px; /* Setting this to 0 make it invisible for VoiceOver */
+	padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;    
+}
+
+
+/* Links improvement */
+a {
+	text-decoration: none;
+	color: $brand-primary;
+	transition: all 0.3s ease-out;
+	position: relative;
+	padding: .5em;
+	margin: -.5em;
+}
+
+a:hover { 
+	color: $brand-primary--light;
+	text-decoration: none; 
+}
+
+
+/* CSS Transparency */
+.transparent {
+	filter:alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+/* Remove textarea scrollbar in IE */
+textarea {
+  overflow:auto;
+}
+
+/* Give Clickable Elements a Pointer Cursor */
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+       cursor: pointer;
+}
+
+/* Mouse Highlight Text Selection */
+::selection {
+color: white;
+background-color: $gray-darker;
+}
+::-moz-selection {
+color: white;
+background: $gray-darker;
+}
+
+/* Vertical Center */
+
+.vertical-center {
+	min-height: 10em;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* Image Loading GIF */
+img {
+    background: image-url('loader.gif') no−repeat 50% 50%;
+}
+
+/* Rounded Corners */
+
+.rounded{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+/* Image Flip */
+
+img.flip {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+/* Blockquote Class */
+blockquote {
+margin: 3em 0 3em 0;
+border-width: 1px;
+border: 1px solid #eaeaea;
+padding: 2em;
+background: none;
+text-align: left;
+font-family: $font-secondary;
+font-size: 1.3em;
+font-style: normal;
+line-height: 1.7;
+color: $gray;
+}
+
+blockquote p {
+margin-bottom: 1em;
+font-size: 1.3em;
+font-style: normal;
+color: $gray-darker;
+line-height: 1.7;
+}
+
+blockquote footer {
+margin-top: -10px;
+font-size: 1em;
+font-family: $font-primary;
+color: $gray;
+}
+
+/* Pull Quote Class */
+
+.pullquote {
+	width: 300px;
+	float: right;
+	margin: 5px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font: italic bold #ff0000 ;
+}
+
+/* HR Color */
+
+hr {
+background-color: #eaeaea;
+}
+
+
+
+/*------------------------------------*\
+    #HEADING
+\*------------------------------------*/
+
+h1 {
+    font-size: 3.2em;
+}
+ 
+h2 {
+    font-size: 2.8em;
+}
+ 
+h3 {
+    font-size: 2.4em;
+}
+ 
+h4 {
+    font-size: 1.8em;
+}
+ 
+h5 {
+    font-size: 1.4em;
+}
+ 
+h6 {
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 3px 0;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    font-weight: 500;
+    color: $gray;
+    font-size: 0.6em;
+}
+
+
+
+/*------------------------------------*\
+    #OBJECTS
+\*------------------------------------*/
+
+.line-section {
+    width: 55px;
+    height: 1px;
+    margin: 30px auto;
+    background: $brand-primary;
+}
+
+
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+/* Buttons */
+
+.btn, a.btn {
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    padding: 12px 27px 11px;
+    -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -ms-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.btn-lg {
+    padding: 15px 40px 14px;
+    font-size: 1.3em;
+}
+
+.btn-sm {
+    padding: 8px 20px 7px;
+    font-size: 1.2em;
+}
+
+.btn-xs {
+padding: 6px 15px 5px;
+font-size: 1.1em;
+letter-spacing: 1px;
+}
+
+.btn-border {
+    background-color: inherit;
+    border: 2px solid;
+    font-weight: 700;
+}
+
+.btn-border.btn-primary {
+    color: $brand-primary;
+}
+
+.btn-border.btn-primary:hover, .btn-border.btn-primary:focus, .btn-border.btn-primary:active, .btn-border.btn-primary.active  {
+    color: $white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+}
+
+.btn-border.btn-info {
+    color: $brand-info;
+}
+
+.btn-border.btn-info:hover, .btn-border.btn-info:focus, .btn-border.btn-info:active, .btn-border.btn-info.active  {
+    color: $white;
+    background-color: $brand-info;
+    border-color: $brand-info;
+}
+
+.btn-border.btn-danger {
+    color: $brand-danger;
+}
+
+.btn-border.btn-danger:hover, .btn-border.btn-danger:focus, .btn-border.btn-danger:active, .btn-border.btn-danger.active  {
+    color: $white;
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+}
+
+.btn-border.btn-warning {
+    color: $brand-warning;
+}
+
+.btn-border.btn-warning:hover, .btn-border.btn-warning:focus, .btn-border.btn-warning:active, .btn-border.btn-warning.active  {
+    color: $white;
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+}
+
+.btn-border.btn-success {
+    color: $brand-success;
+}
+
+.btn-border.btn-success:hover, .btn-border.btn-success:focus, .btn-border.btn-success:active, .btn-border.btn-success.active  {
+    color: $white;
+    background-color: $brand-success;
+    border-color: $brand-success;
+}
+
+.btn-circle {
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+}
+
+.btn-black {
+color: $white;
+background-color: $black;
+border-color: $black;
+}
+
+.btn-border.btn-black {
+    color: $black;
+    background-color: transparent;
+}
+
+.btn-border.btn-black:hover, .btn-border.btn-black:focus, .btn-border.btn-black:active, .btn-border.btn-black.active  {
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+}
+
+.btn.btn-black:hover,.btn.btn-black:focus, .btn.btn-black:active, .btn.btn-black.active {
+    color: white;
+}
+
+.btn-white {
+color: $black;
+background-color: $white;
+border-color: $white;
+}
+
+.btn-border.btn-white {
+    color: $white;
+    background-color: transparent;
+}
+
+.btn-border.btn-white:hover, .btn-border.btn-white:focus, .btn-border.btn-white:active, .btn-border.btn-white.active  {
+    color: $black;
+    background-color: $white;
+    border-color: $white;
+}
+
+.btn.btn-white:hover,.btn.btn-white:focus, .btn.btn-white:active, .btn.btn-white.active {
+    color: black;
+}
+
+.btn-border.btn-default {
+    color: #eee;
+    background-color: transparent;
+}
+
+.btn-border.btn-default:hover, .btn-border.btn-default:focus, .btn-border.btn-default:active, .btn-border.btn-default.active  {
+    color: #888;
+    background-color: #eee;
+    border-color: #eee;
+}
+
+
+/* Fixed Footer */
+
+#page-footer {
+position:fixed;
+left:0px;
+bottom:0px;
+height:30px;
+width:100%;
+background:#999;
+}
+/* IE 6 */
+* html #page-footer {
+    position:absolute;
+    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+
+
+/*------------------------------------*\
+    #TRUMPS
+\*------------------------------------*/
+
+/* Import Fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic|Montserrat:400,700|Raleway:900,500,300,700,800);
+
+/* Default Font Size to use rEM */
+
+html {
+	font-size: 100%; /* font-size 1em = 10px */
+}
+
+body {
+    font-family: $font-primary;
+    font-size: 62.5%; /* font-size 1em = 10px */
+    font-weight: 500;
+}
+
+/* Fonts */
+.font-primary {
+    font-family: $font-primary;
+}
+
+.font-secondary {
+	font-family: $font-secondary;
+}
+
+.font-code {
+    font-family: Monaco, Mono-Space, monospace;
+}
+
+/* Font Weight */
+
+.font-light {
+	font-weight: 300;
+}
+
+.font-regular {
+	font-weight: 500;
+}
+
+.font-bold, strong {
+	font-weight: 700;
+}
+
+.font-black {
+	font-weight: 900;
+}
+
+/* Default p Size */
+
+p {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: $gray-dark;
+    line-height: 1.85;
+    margin: 0 0 1.5em 0;
+}
+
+.text {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: $gray-dark;
+    line-height: 1.85;
+    margin: 0 0 1.5em 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.serif {
+font-family: $font-secondary;
+font-style: italic;
+font-weight: normal;
+}
+
+.title-section {
+    margin-bottom: 15px;
+    font-size: 3.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 1.3em;
+}
+
+.heading-section {
+    margin: 0;
+    padding: 0;
+    font-family: $font-secondary;
+    font-size: 1.6em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.3em;
+    color: $gray-dark;
+}
+
+.title-small {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    color: $gray-darker;
+} 
+
+.text-point {
+    margin-right: -5px;
+    color: $brand-primary;
+    font-family: $font-third;
+    font-weight: 400;
+}
+
+
+
+
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+
+.color-primary {
+	color: $brand-primary;
+}
+
+.color-info {
+	color: $brand-info;
+}
+
+.color-success {
+	color: $brand-success;
+}
+
+.white {
+	color: $white;
+}
+
+.black {
+	color: $black;
+}
+
+.gray {
+	color: $gray;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #MARGINS & PADDINGS
+\*------------------------------------*/
+
+
+/* Margin Bottom */
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+/* Margin Bottom */
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+
+
+
+/*------------------------------------*\
+    #SECTIONS
+\*------------------------------------*/
+
+.page-section {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 140px 0;
+}
+
+.small-section {
+    padding: 70px 0;
+}
+
+
+
+
+/*------------------------------------*\
+    #BACKGROUNDS
+\*------------------------------------*/
+
+.bg-gray--light {
+    background-color: $gray-lighter; 
+}
+
+.bg-dark {
+	background-color: $gray-darker;
+}
+
+.bg-dark--lighter {
+    background-color: #252525;
+}
+
+
+
+
+/*------------------------------------*\
+    #SMOOTH SCROLL
+\*------------------------------------*/
+

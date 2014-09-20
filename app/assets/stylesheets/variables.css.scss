@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    #MY VARIABLES
+\*------------------------------------*/
+
+/* My Variables */
+
+$font-primary: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+$font-secondary: "Libre Baskerville", "Times New Roman", Times, serif;
+$font-third: Montserrat, arial, sans-serif;
+
+
+
+/*------------------------------------*\
+    #BOOTSTRAP OVERRIDES
+\*------------------------------------*/
+
+/* Colors */
+
+$black: #333;
+$white: #FFF;
+
+$brand-primary: #f9005c;
+$brand-primary--light: #FE93BA;
+$brand-primary--dark: #930036;
+
+$brand-info: #27c5c3;
+$brand-info--light: #99EBE9;
+$brand-info--dark: #0D4544;
+
+$brand-success: #58bf44;
+$brand-warning: #f0d14e;
+$brand-danger: #e41919;
+
+$gray-darker: #222;
+$gray-dark: #555;
+$gray: #999;
+$gray-lighter: #f8f8f8;
+
+
+/* Fonts */
+
+$font-family-sans-serif: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+$font-family-serif: "Libre Baskerville", "Times New Roman", Times, serif;
+$font-family-monospace: Montserrat, arial, sans-serif;
+$font-family-base: "Raleway", "Helvetica Neue", "Arial", sans-serif;
+
+/* Tooltips & Popover */
+
+$tooltip-max-width: 200px;
+$tooltip-color: #fff;
+$tooltip-bg: #000;
+
+$popover-max-width: 276px;
+
+
+/* Components Border Radius */
+$border-radius-base: 1px;
+$border-radius-large: 2px;
+$border-radius-small: 0px;
+
+/* Buttons */
+
+$btn-primary-border: $brand-primary;
+$btn-success-border: $brand-success;
+$btn-info-border: $brand-info;
+$btn-warning-border: $brand-warning;
+$btn-danger-border: $brand-danger;
+
+$btn-default-bg: #eee;
+$btn-default-color: #888;
+$btn-default-border: #eee;
