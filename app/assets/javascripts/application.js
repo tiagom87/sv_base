@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require Chart.min
+//= require scrollspy
+//= require owl.carousel.min
 //= require jquery_ujs
 //= require smoothPageScroll
 //= require TweenMax.min

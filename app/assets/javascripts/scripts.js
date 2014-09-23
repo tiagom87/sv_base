@@ -29,15 +29,40 @@
  * Text.................Text helpers.
  */
 
+$(document).ready(function(){
+
+/*------------------------------------*\
+    #TESTIMONIALS CAROUSEL
+\*------------------------------------*/
+
+
+ 
+  $("#testimonials").owlCarousel({
+    autoPlay : 3500,
+    stopOnHover : true,
+    navigation:true,
+    paginationSpeed : 1000,
+    goToFirstSpeed : 2000,
+    singleItem : true,
+    autoHeight : true,
+    transitionStyle:"fade",
+    navigationText: [
+      "<i class='fa fa-angle-left hidden-xs hidden-sm'></i>",
+      "<i class='fa fa-angle-right hidden-xs hidden-sm'></i>"
+      ]
+    
+  });
+ 
+
 
 
 /*------------------------------------*\
     #TOOLTIPS
 \*------------------------------------*/
 
-$(document).ready(function() {
+
 	$('.tooltips').tooltip();
-})
+
 
 
 
@@ -45,9 +70,9 @@ $(document).ready(function() {
     #SCROLL ANCHOR
 \*------------------------------------*/
 
-$(document).ready(function() {
+
 	smoothScroll.init({speed: 1200, easing: 'easeInOutCubic', updateURL: false});
-});
+
 
 
 
@@ -56,9 +81,38 @@ $(document).ready(function() {
     #VIDEOS RESPONSIVE
 \*------------------------------------*/
 
-$(document).ready(function(){
+
     // Target your .container, .wrapper, .post, etc.
     $(".container").fitVids();
+
+
+/*------------------------------------*\
+    #VIEWPORT ANIMATIONS
+\*------------------------------------*/
+
+
+$('.title-animation').on('scrollSpy:enter', function() {
+	$(this).addClass("magictime puffIn");
+});
+
+// $('.title-animation').on('scrollSpy:exit', function() {
+// 	$(this).removeClass("magictime puffIn");
+// });
+
+$('.title-animation').scrollSpy();
+
+
+
+/*------------------------------------*\
+    #CHARTS
+\*------------------------------------*/
+
+
+
+
+
+/* Document Ready */
   });
+
 
 
