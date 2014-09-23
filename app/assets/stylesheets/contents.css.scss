@@ -101,11 +101,16 @@ html, html a {
 }
 
 
-/* Image replacement */
-.ir {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
+/* Logo replacement */
+
+.logo-ir {
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
+background: image-url('monthmentor_logo_white.png') no-repeat;
+background-size: auto 25px;
+margin: 0px;
+width: 187px;
 }
 
 
@@ -200,7 +205,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
 /* Mouse Highlight Text Selection */
 ::selection {
-color: white;
+color: $brand-primary;
 background-color: $gray-darker;
 }
 ::-moz-selection {
@@ -606,6 +611,19 @@ body {
     font-size: 62.5%; /* font-size 1em = 10px */
     font-weight: 500;
     overflow-x:hidden;
+    text-rendering: optimizelegibility;
+    
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    
+    -moz-tap-highlight-color:rgba(0,0,0,0); 
+    -moz-text-size-adjust: none;
+    -moz-font-smoothing: antialiased;
+    
+    -ms-tap-highlight-color:rgba(0,0,0,0); 
+    -ms-text-size-adjust: none;
+    -ms-font-smoothing: antialiased;
 }
 
 /* Fonts */
@@ -823,16 +841,11 @@ font-weight: normal;
 }
 
 .home-section {
-width: 100%;
-display: block;
-overflow: hidden;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+background: image-url('monthmentor_bg.jpg') no-repeat;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -1116,9 +1129,10 @@ transition: opacity 2000ms;
 
 video { display: block; }
 
+
 .bg-pattern-over:before, .bg-pattern-over:after {
 content: " ";
-width: 100%;
+width: 109%;
 height: 100%;
 position: absolute;
 top: 0;
@@ -1126,7 +1140,8 @@ left: 0;
 background-repeat: repeat;
 background-size: auto;
 background-image: image-url('pattern-bg-2.png');
-z-index: 1;
+z-index: -1;
+overflow: hidden;
 }
 
 

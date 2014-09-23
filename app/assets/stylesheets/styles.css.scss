@@ -5,6 +5,7 @@
 .home-group h2 {
 	z-index: 1;
 	font-weight: 300;
+	margin-top: -5em;
 }
 
 .home-group {
@@ -31,4 +32,32 @@ display: table-cell;
 .scroll-landing {
 z-index: 2;
 position: relative;
+}
+
+
+
+
+/*------------------------------------*\
+    #RESPONSIVE MENU
+\*------------------------------------*/
+
+
+.logo-container {
+	float: left;
+}
+
+.nav-menu {
+position: absolute;
+top: 23px;
+right: 10px;
+font-size: 1.15em;
+}
+
+.nav-menu ul li a {
+padding-left: 20px;
+color: $gray;
+}
+
+.nav-menu ul li a:hover, .nav-menu ul li a:focus, .nav-menu ul li a:active, .nav-menu ul li a.active {
+color: $brand-primary;
 }
