@@ -10,23 +10,61 @@ only screen and (min-resolution: 2dppx) {
 	
 }
 
+/* SUPER Large Devices, Wide Screens */
+@media only screen 
+and (min-width : 1824px) {
+
+section:hover .single-carousel .owl-prev, section:hover .small-item-carousel .owl-prev {
+left: 5em;
+}
+
+section:hover .single-carousel .owl-next, section:hover .small-item-carousel .owl-next {
+right: 5em;
+}
+
+}
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
+
+section:hover .single-carousel .owl-prev, section:hover .small-item-carousel .owl-prev {
+left: 1em;
+}
+
+section:hover .single-carousel .owl-next, section:hover .small-item-carousel .owl-next {
+right: 1em;
+}
 
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+.heading-large {
+font-size: 7em;
+}
+
 }
 
 /* Small Devices, Tablets IPAD GENERAL */
 @media only screen and (max-width : 768px) {
 
+.heading-large {
+font-size: 5em;
+}
+
+.heading-sub {
+	font-size: 2.5em;
+}
+
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
+
+body {
+font-size: 50%;
+}
 
 }
 
@@ -44,3 +82,4 @@ only screen and (min-resolution: 2dppx) {
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
   /* For landscape layouts only */
 }
+
