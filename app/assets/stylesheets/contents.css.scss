@@ -407,7 +407,10 @@ color: $black;
     background: $brand-primary;
 }
 
-
+.border-gray {
+    border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
 
 /*------------------------------------*\
     #COMPONENTS
@@ -810,8 +813,15 @@ font-weight: normal;
     margin-top: 10px;
 }
 
+/* Padding */
 
+.pd-10 {
+    padding: 10px;
+}
 
+.pd-15 {
+    padding: 15px;
+}
 
 /*------------------------------------*\
     #SECTIONS
@@ -833,6 +843,25 @@ font-weight: normal;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 140px 0;
+    background: white;
+}
+
+.block-section {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
     background: white;
 }
 
@@ -869,6 +898,10 @@ background: image-url('monthmentor_bg.jpg') no-repeat;
 
 .bg-dark--lighter {
     background-color: #252525;
+}
+
+.bg-primary {
+    background-color: $brand-primary;
 }
 
 
@@ -1153,10 +1186,10 @@ overflow: hidden;
     #POSITIONS
 \*------------------------------------*/
 
-.position-relative {
+.relative {
     position: relative;
 }
 
-.position-absolute {
+.absolute {
     position: absolute;
 }
