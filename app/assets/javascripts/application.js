@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require Chart.min
+//= require Chart
 //= require scrollspy
 //= require owl.carousel.min
 //= require jquery_ujs
@@ -21,9 +21,9 @@
 //= require smooth-scroll
 //= require bind-polyfill.js
 //= require jquery.sticky
+//= require modernizr
 //= require jquery.fitvids
 //= require twitter/bootstrap
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require scripts
-//= require_tree .

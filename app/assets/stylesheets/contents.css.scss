@@ -101,11 +101,16 @@ html, html a {
 }
 
 
-/* Image replacement */
-.ir {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
+/* Logo replacement */
+
+.logo-ir {
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
+background: image-url('monthmentor_logo_white.png') no-repeat;
+background-size: auto 25px;
+margin: 0px;
+width: 187px;
 }
 
 
@@ -200,7 +205,7 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
 /* Mouse Highlight Text Selection */
 ::selection {
-color: white;
+color: $brand-primary;
 background-color: $gray-darker;
 }
 ::-moz-selection {
@@ -372,7 +377,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 .heading-large {
 position: relative;
-font-size: 9.6em;
+font-size: 7em;
 font-weight: 800;
 text-transform: uppercase;
 letter-spacing: 2px;
@@ -402,7 +407,10 @@ color: $black;
     background: $brand-primary;
 }
 
-
+.border-gray {
+    border: 1px solid;
+border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+}
 
 /*------------------------------------*\
     #COMPONENTS
@@ -606,6 +614,19 @@ body {
     font-size: 62.5%; /* font-size 1em = 10px */
     font-weight: 500;
     overflow-x:hidden;
+    text-rendering: optimizelegibility;
+    
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    
+    -moz-tap-highlight-color:rgba(0,0,0,0); 
+    -moz-text-size-adjust: none;
+    -moz-font-smoothing: antialiased;
+    
+    -ms-tap-highlight-color:rgba(0,0,0,0); 
+    -ms-text-size-adjust: none;
+    -ms-font-smoothing: antialiased;
 }
 
 /* Fonts */
@@ -792,8 +813,15 @@ font-weight: normal;
     margin-top: 10px;
 }
 
+/* Padding */
 
+.pd-10 {
+    padding: 10px;
+}
 
+.pd-15 {
+    padding: 15px;
+}
 
 /*------------------------------------*\
     #SECTIONS
@@ -818,21 +846,35 @@ font-weight: normal;
     background: white;
 }
 
+.block-section {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    background: white;
+}
+
 .small-section {
     padding: 70px 0;
 }
 
 .home-section {
-width: 100%;
-display: block;
-overflow: hidden;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+background: image-url('monthmentor_bg.jpg') no-repeat;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -856,6 +898,10 @@ background-size: cover;
 
 .bg-dark--lighter {
     background-color: #252525;
+}
+
+.bg-primary {
+    background-color: $brand-primary;
 }
 
 
@@ -1116,9 +1162,10 @@ transition: opacity 2000ms;
 
 video { display: block; }
 
+
 .bg-pattern-over:before, .bg-pattern-over:after {
 content: " ";
-width: 100%;
+width: 109%;
 height: 100%;
 position: absolute;
 top: 0;
@@ -1126,7 +1173,8 @@ left: 0;
 background-repeat: repeat;
 background-size: auto;
 background-image: image-url('pattern-bg-2.png');
-z-index: 1;
+z-index: -1;
+overflow: hidden;
 }
 
 
@@ -1138,10 +1186,10 @@ z-index: 1;
     #POSITIONS
 \*------------------------------------*/
 
-.position-relative {
+.relative {
     position: relative;
 }
 
-.position-absolute {
+.absolute {
     position: absolute;
 }
