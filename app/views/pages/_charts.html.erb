@@ -1,25 +1,49 @@
-<section class="page-section bg-gray">
+<section class="page-section ">
 <div class="container">
 
 <div class="section-icon color-primary">
     <span class="icon-bar-chart"></span>
 </div>
-<h3 class="title-small title-animation">Charts<span class="text-point">.</span></h3>
-<div class="heading-section"><a>MonthMentor é do caralho.</a></div>
+<h3 class="title-small title-animation">What we are solving<span class="text-point">.</span></h3>
+<div class="heading-section"><a>97% of students don't complete online courses</a></div>
 <div class="line-section mb-60"></div>
 
-<div class="col-sm-4 text-center">
-<h4 class="heading-small mb-30"><i class="icon-clock color-primary"></i> Save Time</h4>
+<div class="col-sm-2 text-center">
+</div>
+
+<div class="col-sm-8 text-center">
+<h4 class="heading-small mb-30"><i class="icon-clock color-primary"></i> Industry Average Completion Ratio</h4>
 <canvas class="pd-15" id="save_chart"></canvas></div>
 
-<div class="col-sm-4 text-center">
-<h4 class="heading-small mb-30"><i class="icon-users color-primary"></i> Increase Student Engagement</h4>
-<canvas class="pd-15" id="engagement_chart"></canvas></div>
-
-<div class="col-sm-4 text-center">
-<h4 class="heading-small mb-30"><i class="icon-share-alt color-primary"></i> Increase Student Referrals</h4>
-<canvas class="pd-15" id="referrals_chart"></canvas></div>
-
+<div class="col-sm-2 text-center">
+</div>
 
 </div>
 </section>
+
+
+<script>
+
+var ctx = $("#save_chart").get(0).getContext("2d");
+
+var data = {
+   labels : ["0%","0%-20%","20%-40%","40%-60%","60%-80%","80%-100%"],
+   datasets: [
+       {
+           label: "Completion Ratios",
+           fillColor: "rgba(220,220,220,0.2)",
+           strokeColor: "rgba(220,220,220,1)",
+           pointColor: "rgba(220,220,220,1)",
+           pointStrokeColor: "#fff",
+           pointHighlightFill: "#fff",
+           pointHighlightStroke: "rgba(220,220,220,1)",
+           data : [70, 17, 4, 2, 3, 4]
+       }
+   ]
+};
+
+var myLineChart = new Chart(ctx).Line(data, {});
+
+
+
+</script>
