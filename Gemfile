@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Install Modernizr Library
 gem 'modernizr-rails'
@@ -56,3 +59,8 @@ end
 gem "twitter-bootstrap-rails", :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 gem "font-awesome-rails"
+
+# Add Heroku Gem
+group :production, :staging do
+	gem 'rails_12factor'
+end
