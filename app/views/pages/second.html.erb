@@ -40,7 +40,7 @@ margin-top: 8px;
 
 <div class="row">
 <div class="col-sm-9">
-<h5 class="mb-10 white">TICKET #148 <span class="font-regular">| Learn Dance Music Production in Ableton Live</span></h5>
+<h5 class="mb-10 white">TICKET #148 <span class="font-regular">| Subject: Can't find the resources | Course: Intro to EDM | Lecture: 3. Drums</span></h5>
 </div>
 
 <div class="col-sm-3 text-right">
@@ -48,6 +48,21 @@ margin-top: 8px;
 </div>
 
 </div>
+
+
+</div>
+
+<div class="block-section border-gray mb-15 bg-gray--light">
+<h6 class="mb-10 color-primary">ANSWER SUGGESTIONS (click to preview)</h6>
+
+
+<p class="question">Answered 2 days ago. 
+<a>Drum sample packs were not found</a> 
+</p>
+
+<p class="question">Answered 8 days ago. 
+<a>Can't find lecture resources</a>
+</p>
 
 
 </div>
@@ -153,16 +168,24 @@ From when i started from lecture 17, you had numerous differen things that didnt
 
 <div class="col-sm-8 margin-left-fix">
     <h6 class="">JOHN RAMEY</h6>
-    <p class="font-regular small">JOHNRAMEY@GMAIL.COM</p>
+    <p class="font-regular small">JOHN183@GMAIL.COM</p>
+    <p class="font-regular small">STUDENT SINCE: 23/04/2012</p>
+    <p class="font-regular small">TICKETS OPENED: 13</p>
+
+</div>
+
+
+
+
+
 
 </div>
 
 </div>
 
-</div>
-
-<button type="button" class="btn btn-primary btn-lg btn-block">Schedule video call</button>
-
+<button type="button" class="btn btn-primary btn-lg btn-block">Suggest live chat</button>
+<canvas class="pd-15" id="student_chart"></canvas>
+<p class="font-regular small text-center">completion ratio (lecture vs time spent)</p>
 
 </div>
 
@@ -174,3 +197,25 @@ From when i started from lecture 17, you had numerous differen things that didnt
 
 </div>
 </section><br><br>
+
+<script>
+var ctx2 = $("#student_chart").get(0).getContext("2d");
+
+var data2 = {
+   labels : ["L1","L2","L3","L4","L5","L6"],
+   datasets: [
+       {
+           label: "Completion Ratio",
+           fillColor: "rgba(220,220,220,0.2)",
+           strokeColor: "rgba(220,220,220,1)",
+           pointColor: "rgba(220,220,220,1)",
+           pointStrokeColor: "#fff",
+           pointHighlightFill: "#fff",
+           pointHighlightStroke: "rgba(220,220,220,1)",
+           data : [30, 40, 60, 20, 15, 40]
+       }
+   ]
+};
+
+var myLineChart2 = new Chart(ctx2).Line(data2, {});
+</script>
